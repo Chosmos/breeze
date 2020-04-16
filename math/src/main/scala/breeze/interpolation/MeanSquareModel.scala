@@ -1,10 +1,10 @@
 /**
  *
- * @author chosmos
+ * @author Chosmos
  * 
  * Implements a base of functions and a Mean Squares Model built upon that base.
  * 
- * Be warned, this is an approximator, not an interpolator. his means that the resulting function is not guaranteed to pass through the sample points.
+ * Be warned, this is an approximator, not an interpolator. This means that the resulting function is not guaranteed to pass through the sample points.
  * Albeith this is not an interpolator, I put it here as it can be used exactly in the same way of existing interpolators.
  * 
  */
@@ -15,7 +15,7 @@ import scala.reflect.ClassTag
 
 import breeze.linalg._
 import breeze.math.Field
-import breeze.interpolation._
+//import breeze.interpolation._
 import scala.math._
 // import spire.math.Fractional
 // import spire.math._
@@ -34,14 +34,9 @@ object Base
   def f08(x:Double) = scala.math.exp(x)
   def f09(x:Double) = scala.math.sin(x)
   def f10(x:Double) = scala.math.cos(x)
- // def f11(x: Double) = scala.math.asin(x)
- // def f12(x: Double) = scala.math.acos(x)
   
-  def f0a(x:Double) = scala.math.sin(x/10.0)
-  def f0b(x:Double) = scala.math.cos(x/10.0)
-  
-  val func:     Array[Double =>Double] = Array(f00, f01, f02, f03, f04, f05, f06, f07, f08, f09, f10, f0a, f0b)
-  val funcRid:  Array[Double =>Double] = Array(f00, f01, f02, f03, f04, f05, f06, f07, f08, f09, f10)
+  val func:     Array[Double =>Double] = Array(f00, f01, f02, f03, f04, f05, f06, f07, f08, f09, f10)
+  val funcRid:  Array[Double =>Double] = Array(f00, f01, f02, f03, f04, f05, f06, f07, f08)
   val funcPoly: Array[Double =>Double] = Array(f00, f01, f02, f03, f04, f05, f06, f07)
   
 }
